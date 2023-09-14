@@ -1,0 +1,297 @@
+/* ---------- root variables ---------- */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f2f2f2;
+  --text-color-light: #ffffff;
+  --text-color-dark: #333;
+  --font-family: "Arial", sans-serif;
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-dark);
+  font-family: var(--font-family);
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.2em;
+  background: var(--background-color);
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+a {
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- header styling ---------- */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 1em;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+/* ---------- footer styling ---------- */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 1em;
+  text-align: center;
+}
+
+/* ---------- main page styling ---------- */
+main {
+  animation: fadeIn 0.4s;
+  padding: 190px 0 0;
+}
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 1em;
+  background-image: url("https://th.bing.com/th/id/OIP.UjsupEZoExtzlYzoThCaeAHaE8?w=266&h=183&c=7&r=0&o=5&pid=1.7");
+  background-size: 800px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- grid item styling ---------- */
+.grid-item {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Push items to top and bottom */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the transparency here */
+  border-radius: 10px; /* Add rounded edges */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.grid-item:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-item p {
+  margin: 0.5em 0;
+}
+
+.grid-item h3:first-letter,
+.grid-item p:first-letter {
+  text-transform: uppercase;
+}
+
+/* ---------- buttons in grid container ---------- */
+.grid-container .btns {
+  padding: 1em 1em 0 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  position: relative;
+  bottom: 1.5em;
+  left: 1.5em;
+  right: 1.5em;
+}
+
+.grid-container .btns button {
+  width: 100%;
+}
+
+/* ---------- form styling ---------- */
+/* input form styling */
+form {
+  margin: 2em auto 0;
+  background-color: #ffffff;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: var(--text-color-light);
+  background-color: var(--primary-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  width: 100%;
+  max-width: 380px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+}
+
+header button {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 1em;
+  border: 2px solid var(--primary-color);
+  display: block;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel {
+  background: var(--background-color);
+  margin: 0 0 1em;
+}
+
+select {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-color-light);
+  padding: 1em;
+  margin: 1em;
+  max-width: 350px;
+}
+
+/* ---------- dialog styling ---------- */
+dialog {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  width: 65vw;
+  padding: 2em 1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+dialog::backdrop {
+  background: rgba(242, 242, 242, 0.8);
+}
+
+.dialog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+dialog h4 {
+  margin-bottom: 0;
+}
+
+dialog ul {
+  margin: 0.5em 0 1em;
+  padding-inline-start: 1.5em;
+}
+
+dialog p {
+  text-align: center;
+}
+
+/* ---------- tools grid styling ---------- */
+.tools-grid {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  justify-items: stretch;
+  justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, auto);
+    margin: 1em;
+  }
+}
+
+.tools-grid input {
+  width: 350px;
+  max-width: 100%;
+  display: inline;
+}
+
+.favorite-btn {
+  font-size: xx-large;
+  padding-right: 1.5em;
+  padding-left: 0.5em;
+}
